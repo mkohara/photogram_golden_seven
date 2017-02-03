@@ -23,7 +23,7 @@ class PhotosController < ApplicationController
     p.source = params[:the_source]
     p.save
 
-    redirect_to("/photos/:id")
+    redirect_to("/photos/")
     #code
   end
 
@@ -46,7 +46,7 @@ class PhotosController < ApplicationController
     p.caption= params[:the_caption]
     p.source = params[:the_source]
     p.save
-    redirect_to("/photos/:id")
+    redirect_to("/photos/")
   end
 
 
