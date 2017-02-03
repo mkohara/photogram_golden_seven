@@ -42,9 +42,11 @@ class PhotosController < ApplicationController
   end
 
   def update_row
-    @photo= Photo.find_by({ :id => params[:id]})
-
-    render("/photos/update_row.html.erb")
+    p = Photo.find_by({ :id => params[:id]})
+    p.caption= params[:the_caption]
+    p.source = params[:the_source]
+    p.save
+    redirect_to("/photos/:id")
   end
 
 
