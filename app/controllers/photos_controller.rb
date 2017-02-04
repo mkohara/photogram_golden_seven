@@ -42,12 +42,12 @@ class PhotosController < ApplicationController
   end
 
   def update_row
-    p = Photo.find_by({ :id => params[:id]})
+    u = Photo.find_by({ :id => params[:id]})
     @photo= Photo.find_by({ :id => params[:id]})
-    p.caption= params[:the_caption]
-    p.source = params[:the_source]
-    p.save
-    redirect_to("/photos")
+    u.caption= params[:new_photo_caption]
+    u.source = params[:new_photo_source]
+    u.save
+    redirect_to("/photos/#{@photo.id}")
   end
 
 
